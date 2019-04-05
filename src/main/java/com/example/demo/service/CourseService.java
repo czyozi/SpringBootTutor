@@ -14,16 +14,12 @@ import java.util.List;
 public class CourseService {
 
     @Autowired
-    CourseRepository courseRepository;
+    CourseRepository CourseRepository;
 
-    public List<Course> findAllCourses(){
-
-        return courseRepository.findAllClasses();
+    public List<List<Integer>> findAllTwoSums(int target){
+        int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        return CourseRepository.findTwoSum(arr, target);
     }
 
-    public List<Course> searchByCourseName(String input){
-
-        return courseRepository.findCourseByName(input);
-    }
 
 }

@@ -23,12 +23,13 @@ public class CourseServiceUnitTest {
     private CourseRepository courseRepository;
 
     @Test
-    public void testCourseService(){
-        List<Course> courseList = new ArrayList<>();
+    public void testCourseService(int target){
+        List<List<Integer>> res = new ArrayList<>();
+        int[] arr = {1,2,3,4, 5, 6, 7, 8,9,10};
 
-        given(courseRepository.findAllClasses()).willReturn(courseList);
+        given(courseRepository.findTwoSum(arr, target)).willReturn(res);
 
-        List<Course> result = courseService.findAllCourses();
+        List<List<Integer>> result = courseService.findAllTwoSums(target);
 
         assertTrue(result.isEmpty());
     }
